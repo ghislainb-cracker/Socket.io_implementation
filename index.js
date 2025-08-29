@@ -38,5 +38,14 @@ import {Server} from "socket.io"
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+const PORT = 3000;
 
 app.use(express.static("public"))
+
+io.on("connection", (client) => {
+    console.log("client connected ")
+})
+
+server.listen(PORT, () => {
+    console.log(`server is running on port: http://localhost:${PORT}`);
+})
