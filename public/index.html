@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io</title>
+</head>
+
+<body>
+    <h1>Ghislain with socket.io</h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module">
+        const socket = io();
+
+        socket.on("connect", () => {
+            console.log("connected to the client side ✅")
+
+            // setTimeout(() => {
+            //     socket.disconnect();
+            // }, 5000);
+        })
+
+        socket.on("message", (message) => {
+            console.log(message)
+        })
+        socket.emit('new message', "Sending the message from the client to the server")
+        socket.on("disconnect", () => {
+            console.log("disconnected from the client side ❌")
+        })
+    </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple chat app</title>
+
+    <script src="socket.io/socket.io.js"></script>
+    <style>
+        #messages{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #messages li {
+            padding: 5px 10px;
+        }
+        #messages li:nth-child(odd) {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <ul id="messages"></ul>
+    <form action="" id="form">
+        <input type="text" id="input" autocomplete="off">
+        <button>send</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("form");
+        const input  = document.getElementById("input");
+
+        const socket = io();
+        
+    </script>
+</body>
+</html>
