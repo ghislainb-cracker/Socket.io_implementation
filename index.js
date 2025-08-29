@@ -18,6 +18,9 @@ app.get("/", (req, res) => {
 io.on("connection", (client) => {
     console.log("user connected to server ✅");
     client.emit('message', "Server is sending data to the client")
+    client.on('new message', (message) => {
+        console.log(message);
+    })
     client.on("disconnect", () => {
         console.log("user disconnected from the server ❌")
     })
