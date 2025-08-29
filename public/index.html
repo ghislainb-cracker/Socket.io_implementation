@@ -74,6 +74,12 @@
                 socket.emit("chat message", input.value);
                 inpit.value = ""
             }
+
+            socket.on("chat message", (msg) => {
+                const item = document.createElement("li");
+                item.textContent = msg;
+                document.getElementById("messages").appendChild(item)
+            })
         })
     </script>
 </body>
