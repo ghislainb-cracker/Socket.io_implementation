@@ -46,7 +46,7 @@ io.on("connection", (client) => {
     console.log("client connected to the server successfully ✅")
 
     client.on("chat message", (msg) => {
-        client.emit("chat message", msg)
+        io.emit("chat message", msg)
     })
 
     client.on("disconnect", () => {
