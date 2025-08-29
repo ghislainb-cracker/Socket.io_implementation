@@ -45,7 +45,9 @@ app.use(express.static("public"))
 io.on("connection", (client) => {
     console.log("client connected to the server successfully ✅")
 
-    client.on("chat message")
+    client.on("chat message", (msg) => {
+        client.emit("chat message", msg)
+    })
 
     client.on("disconnect", () => {
         console.log("User disconnected to the server ❌")
