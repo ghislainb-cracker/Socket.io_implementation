@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io</title>
+</head>
+<body>
+    <h1>Ghislain with socket.io</h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module">
+        const socket = io();
+
+        socket.on("connect", () => {
+            console.log("connected to the client side ✅")
+
+            // setTimeout(() => {
+            //     socket.disconnect();
+            // }, 5000);
+        })
+
+        socket.on("message", (message) => {
+            console.log(message)
+        })
+        socket.on("disconnect", () => {
+            console.log("disconnected from the client side ❌")
+        })
+    </script>
+</body>
+</html>
