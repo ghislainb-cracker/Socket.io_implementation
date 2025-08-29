@@ -43,7 +43,7 @@ const PORT = 3000;
 app.use(express.static("public"))
 
 io.on("connection", (client) => {
-    console.log("client connected ")
+    console.log("client connected to the server successfully ✅")
 })
 
 server.listen(PORT, () => {
