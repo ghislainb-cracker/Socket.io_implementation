@@ -40,6 +40,7 @@ import {Server} from "socket.io"
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+const PORT = 3000
 
 // file path allocation
 app.use(express.static("public"));
@@ -56,3 +57,4 @@ Socket.on("connection", (client) => {
 })
 
 // listening to server port
+server.listen
