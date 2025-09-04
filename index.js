@@ -46,12 +46,12 @@ app.use(express.static("public"));
 
 // turning on socket for connection
 Socket.on("connection", (client) => {
-    console.log("Connected to the server successfully");
+    console.log("Connected to the server successfully✅");
     Socket.on("chat message", (msg) => {
         io.emit("chat message", msg)
     })
     Socket.on("disconnect", () => {
-        console.log("Client discconetced to the server")
+        console.log("Client disconnected to the server❌")
     })
 })
 
