@@ -32,15 +32,24 @@
 // })
 
 // declaring packages
-
+import express from  "express";
+import http from "http"
+import {Server} from "socket.io"
 
 // delcaring variables
-
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
 
 // file path allocation
-
+app.use(express.static("public"));
 
 // turning on socket for connection
-
+Socket.on("connection", (client) => {
+    console.log("Connected to the server successfully");
+    Socket.on("chat message", (msg) => {
+        io.emit("chat message", msg)
+    })
+})
 
 // listening to server port
