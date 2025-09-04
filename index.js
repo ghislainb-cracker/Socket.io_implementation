@@ -49,10 +49,10 @@ app.use(express.static("public"));
 // turning on socket for connection
 Socket.on("connection", (client) => {
     console.log("Connected to the server successfully✅");
-    Socket.on("chat message", (msg) => {
+    client.on("chat message", (msg) => {
         io.emit("chat message", msg)
     })
-    Socket.on("disconnect", () => {
+    client.on("disconnect", () => {
         console.log("Client disconnected to the server❌")
     })
 })
