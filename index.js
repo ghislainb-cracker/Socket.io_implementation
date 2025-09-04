@@ -32,6 +32,7 @@
 // })
 
 // declaring packages
+import { Console } from "console";
 import express from  "express";
 import http from "http"
 import {Server} from "socket.io"
@@ -57,4 +58,6 @@ Socket.on("connection", (client) => {
 })
 
 // listening to server port
-server.listen
+server.listen(PORT, () => {
+    Console.log(`seerver is listening on port: http://localhost:${PORT}`)
+})
