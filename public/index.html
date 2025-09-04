@@ -76,11 +76,17 @@
         // add form event listener
         form.addEventListener("submit", e => {
             e.preventDefault();
-
-            
+            if(input.value){
+                socket.emit("chat message", input.value);
+                input.value = ""
+            }
         })
         // turn on socket requests
-        
+        socket.on("chat message", (msg) => {
+            const item = document.createElement("li");
+            item.textContent = msg;
+            document.getElementById("messages").appendChild(item);
+        })
     </script>
 </body>
 
