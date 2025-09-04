@@ -50,6 +50,9 @@ Socket.on("connection", (client) => {
     Socket.on("chat message", (msg) => {
         io.emit("chat message", msg)
     })
+    Socket.on("disconnect", () => {
+        console.log("Client discconetced to the server")
+    })
 })
 
 // listening to server port
