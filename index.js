@@ -59,5 +59,5 @@ Socket.on("connection", (client) => {
 
 // listening to server port
 server.listen(PORT, () => {
-    Console.log(`seerver is listening on port: http://localhost:${PORT}`)
+    console.log(`seerver is listening on port: http://localhost:${PORT}`)
 })
