@@ -47,7 +47,7 @@ const PORT = 3000
 app.use(express.static("public"));
 
 // turning on socket for connection
-Socket.on("connection", (client) => {
+io.on("connection", (client) => {
     console.log("Connected to the server successfully✅");
     client.on("chat message", (msg) => {
         io.emit("chat message", msg)
