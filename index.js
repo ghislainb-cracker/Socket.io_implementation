@@ -31,29 +31,16 @@
 //     console.log(`server is running on port: http://localhost:${PORT}`)
 // })
 
-import express from "express";
-import http from "node:http";
-import {Server} from "socket.io"
+// declaring packages
 
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
-const PORT = 3000;
 
-app.use(express.static("public"))
+// delcaring variables
 
-io.on("connection", (client) => {
-    console.log("client connected to the server successfully ✅")
 
-    client.on("chat message", (msg) => {
-        io.emit("chat message", msg)
-    })
+// file path allocation
 
-    client.on("disconnect", () => {
-        console.log("User disconnected to the server ❌")
-    })
-})
 
-server.listen(PORT, () => {
-    console.log(`server is running on port: http://localhost:${PORT}`);
-})
+// turning on socket for connection
+
+
+// listening to server port
