@@ -45,11 +45,6 @@ const io = new Server(server);
 app.use(express.static("public"));
 
 // turning on socket for connection
-Socket.on("connection", (client) => {
-    console.log("Connected to the server successfully");
-    Socket.on("chat message", (msg) => {
-        io.emit("chat message", msg)
-    })
-})
+Socket.on("connection", (client) => {})
 
 // listening to server port
